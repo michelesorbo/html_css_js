@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le Form</title>
+</head>
+<body>
+    <h1>Le Form</h1>
+
+    <form action="home.html" method="POST">
+        <table>
+        <tr>
+            <td>Nome:<sup>*</sup></td><td><input type="text" name="nome" required></td>
+        </tr>
+        <tr>
+            <td>Cognome:</td><td><input type="text" name="cognome" placeholder="Inserisci il tuo cognome"></td>
+        </tr>
+        <tr>
+            <td>Password:</td><td><input type='password' name="pwd" placeholder="Password"></td>
+        </tr>
+        <tr>
+            <td>Email:</td><td><input type="email" name="mail"></td>
+        </tr>
+        <tr>
+            <td>CF:</td><td><input type="text" maxlength="5" minlength="3" name="cf"></td>
+        </tr>
+        <tr>
+            <td>Che auto guidi?:</td>
+            <td>
+                <select name="auto">
+                    <optgroup label="Auto Italiane">
+                        <option value="fiat">Fiat</option>
+                        <option value="alfa">Alfa Romeo</option>
+                    </optgroup>
+                    <optgroup label="Auto Tedesche">
+                        <option>BMW</option>
+                        <option>Mercedes</option>
+                    </optgroup>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>Informazioni Personali</td>
+            <td><textarea name="info" rows="4" cols="50"></textarea></td>
+        </tr>
+        
+        <tr>
+            <td>Scegli un primo</td>
+            <td>
+                <input type="radio" name="primo" value="pasta"> Pasta<br>
+                <input type="radio" name="primo" value="riso">Riso<br>
+                <input type="radio" name="primo" value="lasagna">Lasagna<br>
+                <input type="radio" name="primo" value="tortellini">Tortellini
+            </td>
+        </tr>
+
+        <tr>
+            <td>Scegli un secondo</td>
+            <td>
+                <input type="radio" name="secondo" value="Carne">Carne<br>
+                <input type="radio" name="secondo" value="Pesce">Pesce<br>
+                <input type="radio" name="secondo" value="Verdure">Verdure<br>
+                <input type="radio" name="secondo" value="Mozzarella">Mozzarella
+            </td>
+        </tr>
+
+        <tr>
+            <td>Quali vicoli possiedi</td>
+            <td>
+                <input type="checkbox" name="veicoli[]" value="bici">Bicicletta<br>
+                <input type="checkbox" name="veicoli[]" value="auto">Auto<br>
+                <input type="checkbox" name="veicoli[]" value="moto">Moto<br>
+                <input type="checkbox" name="veicoli[]" value="scooter">Scooter<br>
+            </td>
+        </tr>
+
+        <tr>
+            <td>Invia una tua foto:</td>
+            <td><input type="file" name="foto" accept="image/png, image/jpeg, video/*, .pdf, .doc"></td>
+        </tr>
+
+        <tr>
+            <td>Data di Nascita:</td>
+            <td><input type="date" name="dn" value="2018-07-22" min="2018-01-01" max="2023-01-01"></td>
+        </tr>
+
+        <tr>
+            <td>Date Time</td>
+            <td><input type="datetime-local"></td>
+        </tr>
+
+        <tr>
+            <td>Time</td>
+            <td><input type="time"></td>
+        </tr>
+
+        <tr>
+            <td colspan="2"><input type="submit"><input type="reset"></td>
+        </tr>
+        </table>
+    </form>
+    
+</body>
+</html>
