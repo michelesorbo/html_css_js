@@ -1,0 +1,25 @@
+/* Regole di TAG valgono per tutti i tag h3 e h4 presenti nella pagina html */
+h3, h4 {
+    color: blue;
+    background: red;
+    font-size: xx-large;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+/* Classe di tag, può essere assegnata solo ai tag p in questo caso */
+p.rosso {
+    background-color: brown;
+    color: aliceblue;
+}
+
+/* Classe generica che posso attribuire a tutti i tag */
+.colore_rosso {
+    background-color: brown;
+    color: aliceblue;
+    text-align: left;
+}
+
+.content {
+    background-color: bisque;
+    text-align: center;
+}
