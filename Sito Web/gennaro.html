@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esercizio Form</title>
+
+    <link rel="stylesheet" href="gennaro.css" media="all">
+</head>
+<body>
+    
+    <form action="contattaci.php" method="POST" class="form">
+        <h1 class="title">Compila il form</h1>
+        <table>
+        <tr class="input-container">
+            <td class="subtitle">Nome:</td><td><input class="input" type="text" name="nome" placeholder="Inserisci il tuo nome"></td>
+        </tr>
+        <tr>
+            <td class="subtitle">Cognome:</td><td><input class="input" type="text" name="cognome" placeholder="Inserisci il tuo cognome"></td>
+        </tr>
+        <tr>
+            <td class="subtitle">Città</td><td><input class="input" type='text' name="Città" placeholder="Inserisci la tua città"></td>
+        </tr>
+        <tr>
+            <td class="subtitle">Email:</td><td><input class="input" type="email" name="mail" placeholder="Inserisci la tua email"></td>
+        </tr>
+
+        <tr>
+            <td class="subtitle">Checkbox</td>
+            <td class="check">
+                <input type="checkbox" name="CB[]" value="Voce 1">Voce 1<br>
+                <input type="checkbox" name="CB[]" value="Voce 2">Voce 2<br>
+                <input type="checkbox" name="CB[]" value="Voce 3">Voce 3<br>
+                <input type="checkbox" name="CB[]" value="Voce 4">Voce 4<br>
+            </td>
+        </tr>
+
+
+        <tr>
+            <td class="subtitle">Re-Call</td>
+            <td class="check">
+                <input type="radio" name="contatto" value="Telefono">Telefono<br>
+                <input type="radio" name="contatto" value="E-Mail">E-Mail<br>
+                <input type="radio" name="contatto" value="WhatsApp">WhatsApp<br>
+                <input type="radio" name="contatto" value="Skype">Skype<br>
+            </td>
+        </tr>
+        <tr>
+            <td class="subtitle">Device</td>
+            <td>
+                <select name="Device">
+                        <option>PC</option>
+                        <option>PC Portatile</option>
+                        <option>Tablet</option>
+                        <option>Smartphone</option>
+                    </optgroup>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2"><input type="submit" class="submit"></td>
+        </tr>
+        </table>
+    </form>
+
+
+
+
+</body>
+</html>
