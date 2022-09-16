@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selettori</title>
+    <style>
+        /* Selettore di tag o elementi non hanno il . prima del selettore */
+        h1{
+            color: blue;
+        }
+
+        /* LIste di selettori */
+        h2, h3, h4{
+            color: aqua;
+        }
+
+        /*Selettore universale */
+        *{
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+        /* Selettori di classe viene sempre indicato con il . prima della classe */
+        .msg-error{
+            background-color: red;
+            color: white;
+        }
+
+        /* Selettore tramite id che sfrutta l'attributi id delle proprietà del tag HTML */
+        #msg{
+            background-color: blue;
+            color: white;
+        }
+
+        /* Selettori con attributi */
+        
+        /* Valore esatto */
+        a[target="_blank"] {
+            color: red;
+        }
+
+        /* Valore contenente una parola */
+        [title~="sfondo"] {
+            display: none;
+        }
+
+        /* Valore che comincia con una specifica parola */
+        [class|="messaggio"] {
+        background: red;
+        }
+
+        /* Valore che comincia con specifici caratteri */
+        [class^="me"] {
+        background: red;
+        }
+
+        /* Valore che finisce con specifici caratteri */
+        [class$="errore"] {
+        background: red;
+        }
+
+        /* Valore che contiene specifici caratteri */
+        [class*="te"] {
+        background: red;
+        }
+
+
+        /* Pseudo Classi servono ad identificare degli stati speciale */
+        div{
+            height: 200px;
+            width: 200px;
+            border: solid 2px black;
+            background-color: aqua;
+        }
+        div:hover{
+            background-color: brown;
+        }
+
+        /* link non visitato */
+        a:link {
+            color: blue;
+        }
+
+        /* link visitato */
+        a:visited {
+            color: purple;
+        }
+
+        /* Passaggio del mouse */
+        a:hover {
+            color: green;
+        }
+
+        /* Link selezionato */
+        a:active {
+            color: red;
+        }
+
+        /* Pseudo Elementi */
+        p::first-line{
+            color: brown;
+        }
+
+        p::first-letter{
+            font-size: 25px;
+        }
+
+        .msg-error::first-letter{
+            font-size: 40px;
+        }
+
+        /* Combinatori di elementi */
+
+        /* Tutti i P discendenti di DIV a qualsiasi livello */
+        div p {
+            background-color: red;
+        }
+
+        /* Tutti i P figli diretti di DIV */
+        div > p {
+            background-color: red;
+        }
+
+        /* Il primo P adiacente a DIV */
+        div + p {
+            background-color: red;
+        }
+
+        /* Qualsiasi P sullo stesso livello di DIV */
+        div ~ p {
+            background-color: red;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Ciao</h1>
+    <h2>Sono h2</h2>
+    <h3>Sono h3</h3>
+    <p class="msg-error">Messaggio di errore</p>
+    <p id="msg">Sono il selettore id</p>
+    <p>
+        <a href="http://www.google.it" target="_blank">Google</a> - <a title="senza sfondo">Senza href</a>
+    </p>
+    <div>Sono il div</div>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum provident assumenda ratione optio repellat debitis eos, eius laborum reiciendis, ut natus commodi sint architecto numquam deserunt. Quod deleniti optio nemo?</p>
+
+    <div>
+        <p>Sono il paragrafo del div</p>
+    </div>
+
+</body>
+</html>
