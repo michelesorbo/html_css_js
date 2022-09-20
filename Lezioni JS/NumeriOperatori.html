@@ -87,7 +87,8 @@
         const par = document.querySelector('p'); //Vado ad intercettare il tag p nel documento
 
         let valore = prompt("Dammi un valore e lo moltiplico per 5"); //Faccio apparire una casella di controllo
-        par.textContent = valore * 5; //Sostituisco il testo all'interno del p
+        console.log(typeof(valore));
+        par.textContent = Number(valore) + 5; //Sostituisco il testo all'interno del p
         console.log(valore*5);
 
 
