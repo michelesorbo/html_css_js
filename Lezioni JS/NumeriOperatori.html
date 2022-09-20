@@ -8,6 +8,8 @@
 </head>
 <body>
 
+    <p>Risultato delle operazioni</p>
+
     <script>
         //Operatori di incremento e decremento
 
@@ -77,6 +79,17 @@
 
         // Creare una variabile numerica e stampare in console.log true se è pari 
         // false se è dispari
+
+        let valore_num = 22582;
+        console.log(valore_num%2);
+
+        //Inziamo ad interaggire con in Browser
+        const par = document.querySelector('p'); //Vado ad intercettare il tag p nel documento
+
+        let valore = prompt("Dammi un valore e lo moltiplico per 5"); //Faccio apparire una casella di controllo
+        par.textContent = valore * 5; //Sostituisco il testo all'interno del p
+        console.log(valore*5);
+
 
     </script>
     
