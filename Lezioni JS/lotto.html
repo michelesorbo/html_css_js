@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estrazione del lotto</title>
+</head>
+<body>
+
+    <h1>Ruota di Napoli</h1>
+    <p id="nap"></p>
+    <h1>Ruota di Roma</h1>
+    <p id="roma"></p>
+
+    <script>
+        //const par = document.querySelector('p');
+
+        const nap = document.getElementById('nap');
+        const roma = document.getElementById('roma');
+        //window.alert(Math.floor(Math.random() * 90) + 1);
+
+        let nap1 = Math.floor(Math.random() * 90) + 1;
+        let nap2 = Math.floor(Math.random() * 90) + 1;
+        let nap3 = Math.floor(Math.random() * 90) + 1;
+        let nap4 = Math.floor(Math.random() * 90) + 1;
+        let nap5 = Math.floor(Math.random() * 90) + 1;
+
+        let ro1 = Math.floor(Math.random() * 90) + 1;
+        let ro2 = Math.floor(Math.random() * 90) + 1;
+        let ro3 = Math.floor(Math.random() * 90) + 1;
+        let ro4 = Math.floor(Math.random() * 90) + 1;
+        let ro5 = Math.floor(Math.random() * 90) + 1;
+
+
+        nap.textContent = "Gli estratti per Napoli sono: " + nap1 + " - " + nap2 + " - " + nap3 + " - " + nap4 + " - " + nap5;
+        roma.textContent = "Gli estratti per Roma sono: " + ro1 + " - " + ro2 + " - " + ro3 + " - " + ro4 + " - " + ro5;
+    </script>
+    
+</body>
+</html>

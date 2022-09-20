@@ -76,8 +76,15 @@
         ci sono in un'ora? 3600 secondi ;)
         *************************************************************************/
 
-        par.textContent = Math.floor(5.95); //Prende i solo i decimali
-        //resto %
+        let numeroInSecondi = Number(prompt("Quanti secondi vuoi convertire?"));
+        let ore = Math.floor(numeroInSecondi/3600); //Mi sono calcolato le ore
+        let restoMinuti = numeroInSecondi % 3600;
+        let minuti = Math.floor(restoMinuti / 60); //Vado a calcolare i minuti
+        let secondi = restoMinuti % 60; //Ricavo i secondi
+
+        par.textContent = "Ore: " + ore + " Minuti: " + minuti + " Secondi: " +secondi;
+
+       
     </script>
     
 </body>

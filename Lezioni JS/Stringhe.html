@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le Stringhe</title>
+</head>
+<body>
+    <p></p>
+    <script>
+        const par = document.querySelector('p');
+        
+        let str = "corso di javascript presentato dal fondo di formatemp";
+
+        console.log(str.length); //Restituisce il numero di caratteri della stringa
+
+        console.log(str[0]); //Le stringhe le possiamo trattare come array
+
+        console.log(str[str.length-1]); //Prendo ultimo carattere della stringa
+
+        console.log(str.indexOf('di')); //Ritorna l'inidce di partenza della parola
+
+        console.log(str.slice(0, str.indexOf('presentato'))); //Serve a tagliare una stringa
+
+        //let nome = prompt("Inserisi il tuo nome");
+        //par.textContent = nome.toUpperCase(); //Tutto in maiuscolo
+        //par.textContent = nome.toLowerCase(); //Tutto in minuscolo
+
+        console.log(str.replace('javascript', 'HTML')); //Sostituisce javascript con HTML
+
+        let str2 = "     ciao      ";
+        console.log(str2.length);
+        console.log(str2.trim().length);
+
+    </script>
+    
+</body>
+</html>

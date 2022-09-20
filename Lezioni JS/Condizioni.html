@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le condizioni</title>
+</head>
+<body>
+
+    <script>
+        let num = 10;
+
+        if(num > 5){
+            //window.alert("Numero maggiore di 5");
+            console.log("Numero maggiore di 5");
+        }
+
+        /*
+        num = Number(prompt("Inserisci un numero e ti dirò se è pari o dispari"));
+
+        if(num%2 == 0){
+            window.alert("Pari");
+        }else{
+            window.alert("Dispari");
+        }
+        */
+        //Dato l'anno corrente e l'anno di nascita dire se è maggiornenne o minorenne
+
+        let annCorrente = new Date();
+        //window.alert(anno.getFullYear());
+
+        //let annCorrente = Number(prompt("Dammi l'anno corrente"));
+        let annoNascita = Number(prompt("Dammi l'anno di nascita"));
+
+        //let eta = annCorrente - annoNascita;
+
+        if((annCorrente.getFullYear() - annoNascita) >= 18){
+            window.alert("Sei maggiornenne");
+        }else{
+            window.alert("Sei Minorenne");
+        }
+
+    </script>
+    
+</body>
+</html>
