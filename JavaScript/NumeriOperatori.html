@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Numeri e Operatori</title>
+    <!-- Link lezione: https://codegrind.it/javascript/numeri-e-operatori-matematici-lezione-03/ -->
+</head>
+<body>
+    
+
+    <script>
+        let numero = 3.4685998;
+
+        console.log(numero.toFixed(2));
+
+        //Cast
+        let num2 = '46'; //è una stringa
+
+        console.log(num2 + 3); //Senza Cast
+        console.log(Number(num2) + 3); //Con Cast
+
+        //Operatori di confronto
+
+        console.log(10 > 9);
+
+        console.log(10 === 10); //Si perchè sono entrambe numeri
+        console.log('10' === 10); //No perchè uno è una stringa e un numero
+        console.log('10' == 10) //Si perchè non vede il tipo ma solo il valore
+    </script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le Variabili</title>
+</head>
+<body>
+
+    <script>
+        var nome; //Vecchio metodo di dichiarazione variabile
+        let cognome; //Nuovo metodo di dichiarazione variabile
+        let eta =  43;//Dichiaro e inizializzo la variabile
+
+        cognome = "Sorbo"; //Inizzializzato la variabile
+
+        console.log(eta); //Stampo la variabile età
+
+        eta = 34; //Assegno un nuovo valora alla variabile età
+        
+        console.log(eta); //Stampo il nuovo valore della variabile età
+
+        console.log(cognome); //Stampo la variabile nel log della console
+
+        //Commento di linea
+        /* Inizio commento di blocco
+            Commento di blocco
+        Fine commen to di blocco */
+
+        let numerico = 12 //Intero Tipo Numerico senza nulla solo numeri
+        let decimale = 12.50 //Decimale
+        
+        let testuale = "Michele" //Tipo testuale (Stringa) posso usare sia "" che ''
+
+        let logico = true //Tipo Logico/Booleano True/Folse 0/1
+        logico = false;
+
+        console.log(typeof(numerico));
+        numerico = "12";//Tipizzazione dinamica delle variabili 
+        console.log(typeof(numerico));
+        //window.alert(numerico);
+
+        //Costanti in JS
+        const PGRECO = 3.14;
+        console.log(PGRECO);
+
+        //Gli Array o Vettori
+        let alunni = ['Federica', 'Fabio', 'Toni', 'Francesco'];
+        console.log(alunni);
+        console.log(alunni[1]); //Ricordati che l'inidce parte da 0
+
+        let misto = ['Fabio', 34, 'JavaScript', true, 3.14]; //Valori di indice diversi 
+        console.log(misto[3]);
+
+        //Gli oggetti
+        let corsista = {
+            nome: "Fabio",
+            cognome: "Billeri",
+            eta: 23,
+            corso: "HTML CSS JS",
+            amici: ['Francesco', 'Valentina', 'Lorenzo'],
+        };
+
+        console.log(corsista);
+        console.log(corsista.amici[0])
+        console.log(corsista.cognome);
+
+        corsista.nome = "Michele";
+        console.log(corsista.nome, corsista.cognome);
+
+
+
+    </script>
+    
+</body>
+</html>
