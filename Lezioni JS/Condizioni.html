@@ -71,6 +71,84 @@
         //Prendere in input 3 numeri e stamapre a video il maggiore
         //Es n1 = 5, n2 = 8, n3 = 4  -> Output: Il maggiore è 8
 
+        let n1 = 5;
+        let n2 = 8;
+        let n3 = 4;
+
+        //Senza operatori ma con if annidati
+        if(n1 > n2){
+            if(n1 > n3){
+                console.log(n1 + " è il maggiore");
+            }else{
+                console.log(n3 + " è il maggiore");
+            }
+        }else{
+            if(n2 > n3){
+                console.log(n2 + " è il maggiore");
+            }else{
+                console.log(n3 + " è il maggiore");
+            }
+        }
+
+
+        //Con operatori ed else if
+        if(n1>n2 && n1>n3){
+            window.alert("n1 è il maggiore");
+        }else if(n2>n1 && n2>n3){
+            window.alert("n2 è il maggiore");
+        }else {
+            window.alert("n3 è il maggiore");
+        }
+
+
+        //SWITCH
+        let scelta = prompt("Scegli cosa uoi fare s=somma, p=moltiplicazione");
+
+        switch(scelta){
+            case "s":
+                window.alert("Hai scelto la somma");
+                let s1 = +prompt("Dammi il primo numero");
+                let s2 = +prompt("Dammi il secondo numero");
+                window.alert("La somma è: " + (s1 + s2));
+                break;
+            case "p":
+            window.alert("Hai scelto la moltiplicazione");
+                let p1 = +prompt("Dammi il primo numero");
+                let p2 = +prompt("Dammi il secondo numero");
+                window.alert("Il risultato è: " + (s1 * s2));
+                break;
+            default:
+                window.alert("Scelta non consentita");
+                break;
+        }
+
+        //Rifatto con if else
+        if(scelta == "s"){
+            window.alert("Hai scelto la somma");
+            let s1 = +prompt("Dammi il primo numero");
+            let s2 = +prompt("Dammi il secondo numero");
+            window.alert("La somma è: " + (s1 + s2));
+        }else if(scelta == "p"){
+            window.alert("Hai scelto la moltiplicazione");
+            let p1 = +prompt("Dammi il primo numero");
+            let p2 = +prompt("Dammi il secondo numero");
+            window.alert("Il risultato è: " + (s1 * s2));
+        }else{
+            window.alert("Scelta non consentita");
+        }
+
+        //OPERATORE TERNARIO
+        //condizione ? istruzione1; : istruzione2;
+        let piove = false;
+        console.log(piove == true ? 'Fuori piove' : 'Non serve impermiabile');
+
+        let freddo = true;
+        console.log(piove == true && freddo == true ? 'Piove e fa freddo' : 'Ho visto giornate peggiori');
+
+        let ombrello = piove == true ? 'Si' : 'No';
+        console.log(ombrello);
+
+
 
 
     </script>
