@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Es Cicle e array</title>
+</head>
+<body>
+
+    <h2>Es 1</h2>
+    <p>Dato un array di interi, sommare tutti gli elementi</p>
+    <p id="ris1"></p>
+    <script>
+        const ris1 = document.getElementById("ris1");
+        let ar1 = [12,25,35,36,95,31];
+        let somma = 0;
+
+        for(let i= 0; i < ar1.length; i++){
+            somma += ar1[i];
+        }
+
+        ris1.innerHTML = "La somma è: " + somma;
+
+    </script>
+
+    <h2>Es 2</h2>
+    <p>Dato un array numerico creare altri 2 array che contengono gli elemnti pari e dispari
+        dell'array principale
+    </p>
+    <p id="pari"></p>
+    <p id="dispari"></p>
+
+    <script>
+        let ar2 = [25,36,21,42,69,87];
+        let ar_pari = [];
+        let ar_dispari = [];
+
+        for(let i=0; i < ar2.length; i++){
+            if(ar2[i]%2 == 0){
+                ar_pari.push(ar2[i]); // ar2[0] ar2[1]...ar2[5]
+            }else{
+                ar_dispari.push(ar2[i]);
+            }
+        }
+
+        document.getElementById("pari").innerHTML = "Elementi pari: " + ar_pari;
+        document.getElementById("dispari").innerHTML = "Elemnti dispari: " + ar_dispari;
+    </script>
+
+    <h2>Es 3</h2>
+    <p>Dato un array creare un sua copia invertita
+        es: ar = 3,4,5,6 aut: ar_inv = 6,5,4,3
+    </p>
+    <p id="r_es3"></p>
+
+    <script>
+        let ar3 = [25,36,35,24,54,85];
+        let ar_in1= [];
+
+        for(let i = 0; i < ar3.length; i++){
+            ar_in1.unshift(ar3[i]);
+        }
+
+        document.getElementById('r_es3').innerHTML = "Risultato primo metodo: " + ar_in1 + "<br>";
+
+        //Secondo metodo cn push()
+        let ar_in2 = [];
+        for(let i = ar3.length-1; i >= 0; i--){
+            ar_in2.push(ar3[i]);
+        }
+        document.getElementById('r_es3').innerHTML += "Risultato secondo metodo: " + ar_in1 + "<br>";
+
+        let ar_in3 = [...ar3.reverse()];
+
+        document.getElementById('r_es3').innerHTML += "Risultato terzo metodo: " + ar_in3 + "<br>";
+        
+
+    </script>
+
+    
+</body>
+</html>
