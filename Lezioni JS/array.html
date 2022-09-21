@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gli Array</title>
+</head>
+<body>
+
+    <script>
+
+        //Dichiarazione degli array
+        let arr1 = new Array();//Dichiarazione tipa ad oggetti
+        let arr2 = []; //Dichiarazzione di array vuoto classica
+        let frutta = ['Mele', 'Pere', 'Ananas']; //Dichiarato e riempito un array
+
+        //Come accedere ad un elemento dell'array
+        console.log(frutta);
+        console.log(frutta[1]); //RICORDA CHE L'INDICE PARTE DA 0
+        console.log("Elementi in array: " + frutta.length); //Restituisce il numero di elementi dell'array
+        console.log(frutta[frutta.length-1]); //Visualizzare l'ultimo elemento di un array
+
+        frutta[1] = "Limoni"; //Modifica di un valore all'interno di un array
+        console.log(frutta);
+
+        //Array Misto
+        let misto = ['Michele', {cognome: 'Sorbo', eta: 43}, true, [23, 45, 67]];
+        console.log(misto[3][1]);
+        console.log(misto[1].eta);
+
+        //Inserire elementi in array
+        //PUSH() inserisce uno o più elemnti alla fine dell'array
+        frutta.push("Banane");
+        console.log(frutta);
+        frutta.push("Cocomero", "Fragole");
+        console.log(frutta);
+
+        //UNSHIFT() aggiunge uno o più elementi all'inizio dell'array
+        frutta.unshift("Albicocche", 'Kiwi');
+        console.log(frutta);
+
+        //Eliminare gli elemnti da un array
+        //POP() elimina l'ultimo elemento di un array
+        frutta.pop();
+        console.log(frutta);
+
+        //SHIFT() Elimina il primo elemnte dell'array
+        frutta.shift();
+        console.log(frutta);
+
+        //Eliminare un valore ad un indice NON SI USA
+        //delete frutta[2];
+        //console.log(frutta);
+
+        //Verificare se un elemento è presente nell'array se l'elemnto è presente ritarna true altrimenti ritorna false
+        console.log(frutta.includes("Kiwi"));
+
+        let lotto = [12, 34, 56, 23];
+        let estratto = 25;
+
+        if(!lotto.includes(estratto)){
+            lotto.push(estratto);
+        }
+
+        console.log(lotto);
+
+        let alunni = ['Fabio', 'Mario', 'Carlo'];
+
+        /*
+        let alunni2 = alunni; //Copia per riferimento, le modifiche su alunni2 si ripercuotono anche su alunni
+
+        console.log(alunni);
+        console.log(alunni2);
+
+        alunni2[1] = "Marco";
+
+        console.log("Sono alunni: " + alunni);
+        console.log("Sono alunni2: " + alunni2);
+        */
+
+        //Copiare il contenuto di un array in un nuovo array
+        let alunniCopia = Array.from(alunni);
+        alunniCopia[1] = "Marco";
+
+        console.log("Sono alunni: " + alunni);
+        console.log("Sono alunniCopia: " + alunniCopia);
+    
+        let alunniCopia2 = [...alunni];
+        alunniCopia2[0] = "Giovanni";
+
+        console.log("Sono alunni: " + alunni);
+        console.log("Sono alunniCopia2: " + alunniCopia2);
+
+
+    </script>
+    
+</body>
+</html>
