@@ -11,43 +11,16 @@
 <body>
 <h1>Variabili</h1>
 
- 
+    scrivi: <input type="text" id="inp1">
+
+
     <script>
-        // Dichiariamo una variabile
-        let nome; //Dichiariamo la variabile nome
+        const inp1 = document.getElementById("inp1");
 
-        nome = 'Michele' //Assegno o aggiorno un valore alla Variabile
+        inp1.addEventListener('keyup', function(e){
+            console.log(inp1.value)
+        })
 
-        let cognome = 'Sorbo' //Dichiariamo e inizializziamo una variabile
-
-        console.log(nome); //Visualizziamo la variabile nel log del browser
-        console.log(cognome); //Variabile non inizializzata errore diverso
-
-        // Gli Array
-        let alunni = ['Antonio', 'Luca', 'Mario'];
-        console.log(alunni);
-        console.log(alunni[0]); //Ricordati che l'indice dell'array parte da 0
-
-        //Gli oggetti
-        let persona = {
-            nome: 'Michele',
-            cognome: 'Sorbo',
-            codFis: 'SRBMHL',
-            eta: 43,
-            coloriPreferiti: ['Rosso', 'Giallo','Nero']
-        };
-
-        console.log(persona);
-        console.log(persona.nome); //Stampo a video solo il nome
-
-        //Tipizzazione dinamica, JavaScript riconosce automaticamente il tipo di variabile
-        console.log(typeof(nome));
-        nome = 123;
-        console.log(typeof(nome));
-
-        //Costanti sono dei valori che non devono cambiare nel tempo
-        const google = 'http://www.google.it';
-        google = 'ciao'; //Errore non posso riscrivere una costante
     </script>
     
 </body>

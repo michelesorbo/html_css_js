@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esercizi Cicli</title>
+</head>
+<body>
+
+    <h1>Es 1</h1>
+    <p>Chiedere all'utente quale tabelllina stampare. 
+        Come output stampare i primi 10 risultati</p>
+
+    <p id="ris_es1"></p>
+    <script>   
+        const ris_es1 = document.getElementById("ris_es1");
+
+        /*
+        ris_es1.innerHTML = "Solo testo e tag <b>html</b> ";
+
+        ris_es1.innerHTML += "Sono la nuova riga";
+
+        let somma = 5;
+
+        somma += 10; // somma = somma + 10;
+        */
+
+        let tabellina = +prompt("Quale tabellina vuoi visualizzare?");
+
+        for(let i = 0; i<11; i++){
+            //ris_es1.innerHTML += i * tabellina + "<br>";
+            ris_es1.innerHTML += i + " x " + tabellina + " = " + (i * tabellina) + "<br>";
+        }
+    </script>
+
+    <h1>Es 2</h1>
+    <p>Scrivi un programma che che stampi i numeri da 1 a 100 andando a capo ogni 10.<br>
+        Esempio:<br>
+          Output: 1 2 3 4 5 6 7 8 9 10
+                  11 12 13 14 15 16 17 18 19 20<br>
+                  21 22 23 24 25 26 27 28 29 30<br>
+                  31 32 33 34 35 36 37 38 39 40<br>
+                  41 42 43 44 45 46 47 48 49 50<br>
+                  51 52 53 54 55 56 57 58 59 60<br>
+                  61 62 63 64 65 66 67 68 69 70<br>
+                  71 72 73 74 75 76 77 78 79 80<br>
+                  81 82 83 84 85 86 87 88 89 90<br>
+                  91 92 93 94 95 96 97 98 99 100<br>
+        Consiglio:<br>
+        Per andare a capo usa 'br'.<br>
+        Ricordati il % modulo.<br>
+        Ricordati la condizione if.<br>
+    </p>
+    <p id="ris_es2"></p>
+    <script>
+        const ris_es2 = document.getElementById("ris_es2");
+        for(let i = 1; i < 101; i++){
+            ris_es2.innerHTML += i + " ";
+            if(i%10 == 0){
+                ris_es2.innerHTML += "<br>";
+            }
+        }
+
+        ris_es2.innerHTML += "<br><h4>Con contatore</h4>"
+
+        //Soluzione con contatore
+        let conta = 0; //Ricordo il numero di numeri stampati a video azzero ogni 10
+        for(let i = 1; i < 101; i++){
+            ris_es2.innerHTML += i + " ";
+            conta++; //Incremento il contatore
+            if(conta == 10){
+                ris_es2.innerHTML += "<br>";
+                conta = 0; //Azzero il contatore
+            }
+        }
+
+    </script>
+
+    <h2>Es 3</h2>
+    <p>Chiedere quanti numeri si vogliono sommare e fare la somma:<br>
+        dammi il 1° numero:<br>
+        dammi il 2° numero:<br>
+        In caso di numero alto (es 100 numeri da sommare) posso interrompere la somma inserendo 0
+    </p>
+
+    <p id="ris_es3"></p>
+    
+    <script>
+        const ris_es3 = document.getElementById("ris_es3");
+
+        let q_n = +prompt("Quanti numeri vuoi sommare?");
+        let somma = 0;
+        let n,i;
+
+        for(i = 1; i <= q_n; i++){
+            n = +prompt("Dammi il "+i+"° numero");
+            if(n == 0){
+                break;
+            }else{
+                somma += n;
+            }
+        }
+
+        ris_es3.innerHTML = "La somma è: " + somma + " ed hai sommato " + i-1 + " numeri";
+
+    </script>
+</body>
+</html>

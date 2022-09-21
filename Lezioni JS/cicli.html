@@ -10,6 +10,7 @@
 
     <p id="for1"></p>
     <p id="for_ar"></p>
+    <p id="for_es1"></p>
     <script>
         //Vecchio metodo 
         let somma = 0;
@@ -56,7 +57,30 @@
         }
 
         //Chiedere all'utente quanti numeri stamapre a video
+        const for_es1 = document.getElementById("for_es1");
 
+        let numeri_s = +prompt("Quanti numeri vuoi stampare: ");
+        let num_inizio = +prompt("Da quale numero vuoi iniziare: ");
+
+        for(let i = num_inizio; i <= (numeri_s + num_inizio); i++){
+            for_es1.innerHTML += i + "<br>";
+        }
+
+        //Il comando breack serve a fermare un ciclo
+        for(let i = 0; i <= 10;i++){
+            console.log(i);
+            if(i == 5){
+                break; //Molto usato
+            }
+        }
+
+        //Continue serve a far saltare solo quell'indice
+        for(let i = 0; i <= 10;i++){
+            console.log(i);
+            if(i == 5){
+                continue;
+            }
+        }
 
 
     </script>
