@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funzioni JS</title>
+</head>
+<body>
+
+    <p>
+        <button onclick="saluto()">Salutami</button>
+        <button id="btnSalutami">Secondo BTN</button>
+    </p>
+    <p>
+        <input type="text" id="nome" placeholder="Inserisci il tuo nome"><button>Fatti salutare</button>
+    </p>
+    <script>
+
+        /*Vita reale
+            funzione cucinaPasta(){
+                prende la pentola
+                riempe la pentola con acqua
+                mette la pentola sul fuoco 
+                prende la pasta
+                pesa la pasta
+                si mette il sale nell'acqua
+                si butta la pasta
+                si attende il tempo necessario
+                si scola la pasta
+            }
+        */
+        function saluto(){
+            window.alert("Ciao dalla Funzione Saluto");
+        }
+
+        function ciaoMondo(){
+            window.alert("Ciao Mondo!!!");
+        }
+
+        function sommaDue(){
+            let n1 = +prompt("inserisci il primo numero");
+            let n2 = +prompt("inserisci il secondo numero");
+            window.alert("La somma è: " + (n1 + n2));
+        }
+
+        const btnSalutami = document.getElementById("btnSalutami");
+
+        
+        btnSalutami.addEventListener("click", ciaoMondo);
+
+        //Le funzioni con Parametro
+        function salutoNome(nome = "Nessun Nome"){
+            window.alert("Ciao "+nome);
+        }
+
+        let nome_var = "Francesco";
+        salutoNome(nome_var);
+
+        //Funzioni con più parammetri
+        function somma(a,b){
+            window.alert("la somma è: " + (a+b));
+        }
+
+        somma(4,6);
+        somma(2,5);
+
+    </script>
+</body>
+</html>

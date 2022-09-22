@@ -8,7 +8,9 @@
 </head>
 <body>
 
+    <p id="dis"></p>
     <script>
+        /*
         //Stampare 10 numeri a video
         //for(let i = 0; i <= 10; i++)
 
@@ -52,6 +54,31 @@
 
         console.log(ruotaNapoli);
         console.log(tentativi);
+
+        */
+        //Do While
+        let somma2 = 0;
+        let num;
+        let ricordo = [];
+        do{
+            num = +prompt("Dammi un numero da sommare 0 per terminare");
+            somma2 += num;
+            if(num != 0){
+                ricordo.push(num);
+            }
+        }while(num != 0)
+
+        document.getElementById("dis").innerHTML = "La somma è: "+ somma2+ " i numeri inseriti sono: "+ricordo;
+
+        //Ciclo infinito
+        let x = 0;
+        while(true){
+            console.log(x);
+            if(x > 10){
+                break;
+            }
+            x++;
+        }
 
     </script>
     
