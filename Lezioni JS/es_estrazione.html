@@ -43,20 +43,43 @@
 
         //Versione semplice
         let tentativi = +prompt("Quanti numeri vuoi estrarre? (max 5)");
+        let quota = +prompt("Quanto vuoi scommettere, puntata massima 5€");
 
+        //Controlle se i tentativi sono inferiore o uguali a 5
+        if(tentativi <= 5 && quota <= 5){
         //Senza ricordare i numeri
-        let i = 1;
-        let esatti = 0;
+            let i = 1;
+            //let esatti = 0;
+            let ar_esatti = [];
 
-        while(i <= tentativi){
-            let numero = +prompt("Dimmi il "+ i +"° numero");
-            if(ruotaNazionale.includes(numero)){
-                esatti++;
+            while(i <= tentativi){
+                let numero = +prompt("Dimmi il "+ i +"° numero");
+                if(ruotaNazionale.includes(numero)){
+                    //esatti++;
+                    ar_esatti.push(numero);
+                }
+                i++;
             }
-            i++;
+
+            // esito.innerHTML = "Hai indovinato "+ esatti +" numeri";
+            //Controllare cosa ha fatto
+            if(ar_esatti.length == 1){
+                esito.innerHTML = "Hai indovinato solo un numero: "+ ar_esatti;
+            }else if(ar_esatti.length == 2){
+                esito.innerHTML = "Hai fatto Ambo: "+ ar_esatti + ". Hai vinto " + (ar_esatti.length * quota) + "€";
+            }else if(ar_esatti.length == 3){
+                esito.innerHTML = "Hai fatto Terno: "+ ar_esatti + ". Hai vinto " + (ar_esatti.length * quota) + "€";
+            }else if(ar_esatti.length == 4){
+                esito.innerHTML ="Hai fatto Quaterna: "+ ar_esatti + ". Hai vinto " + (ar_esatti.length * quota) + "€";
+            }else if(ar_esatti.length == 5){
+                esito.innerHTML = "Hai fatto Cinquina: "+ ar_esatti + ". Hai vinto " + (ar_esatti.length * quota) + "€";
+            }else{
+                esito.innerHTML = "Non hai indovinato nessun numero";
+            }
+        }else{ //SE i tentativi sono superiori a 5
+            esito.innerHTML = "Non fare il furbo";
         }
 
-        esito.innerHTML = "Hai indovinato "+ esatti +" numeri";
     </script>
 </body>
 </html>
