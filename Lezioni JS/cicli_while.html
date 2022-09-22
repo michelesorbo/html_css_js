@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ciclo While</title>
+</head>
+<body>
+
+    <script>
+        //Stampare 10 numeri a video
+        //for(let i = 0; i <= 10; i++)
+
+        let i = 0; //Inizializzazione
+        while(i <= 10){ //Condizione
+            //console.log(i);
+            i++; //Modifica dell'indice
+            console.log(i);
+        }
+
+        //Sommo tutti i numeri finchè non inserisci 0
+        let num = +prompt("Sommo tutti i numeri finchè non inserisci 0");
+        let somma = 0;
+
+        while(num !=0){
+            somma += num;
+            num = +prompt("inserisci un numero 0 per terminare");
+        }
+
+        console.log(somma);
+
+        //Visualizzare i primo 10 muneri in ordine decrescente da 10 a 0
+        let conta = 10;
+
+        while(conta>=0){
+            console.log(conta);
+            conta--;
+        }
+
+        //Esercizio inserire 5 numeri diversi in un array
+        let ruotaNapoli = [];
+        let estratto;
+        let tentativi = 0;
+        while(ruotaNapoli.length < 5){
+            tentativi++;
+            estratto = Math.floor(Math.random() * 90) + 1;
+            if(!ruotaNapoli.includes(estratto)){
+                ruotaNapoli.push(estratto);
+            }
+        }
+
+        console.log(ruotaNapoli);
+        console.log(tentativi);
+
+    </script>
+    
+</body>
+</html>

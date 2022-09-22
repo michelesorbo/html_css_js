@@ -93,8 +93,39 @@
             }
         }
 
-
     </script>
-    
+
+    <h1>Ciclo For ... in</h1>
+    <p id="for_in"></p>
+    <script>
+        let ar1 = [25,35,45,24,36];
+
+        for(let indice in ar1){
+            document.getElementById("for_in").innerHTML += indice + " - " + ar1[indice] + "<br>";
+        }
+
+        document.getElementById("for_in").innerHTML += "<h2>For of<h2>";
+
+        for(let valore of ar1){
+            document.getElementById("for_in").innerHTML += valore + "<br>";
+        }
+
+        let somma_of = 0;
+        for(let valore of ar1){
+            somma += valore;
+        }
+
+        document.getElementById("for_in").innerHTML += "La somma dell'array è: " + somma + "<br>";
+
+        //Contare i numeri dispari in array
+        let tot_dispari = 0;
+        for(let numero of ar1){
+            if(numero%2 == 1){
+                tot_dispari++;
+            }
+        }
+        document.getElementById("for_in").innerHTML = "I numeri dispari sono: " + tot_dispari;
+    </script>
+
 </body>
 </html>

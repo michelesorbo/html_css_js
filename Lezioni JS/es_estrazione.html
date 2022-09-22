@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estrazione lotto</title>
+</head>
+<body>
+    <p id="esito"></p>
+    <script>
+        const esito = document.getElementById("esito");
+        //Creo la ruota nazionale composta da 20 numeri tutti diversi ed estratti a caso
+        let ruotaNazionale = [];//Creo array vuoto
+        //Vado a riempire l'array
+        let estratto;
+        while(ruotaNazionale.length < 5){
+            estratto = Math.floor(Math.random() * 20) + 1;//Estraggo in modo casuale i numeri da 1 a 20
+            if(!ruotaNazionale.includes(estratto)){ //controllo che il numero estratto non sia già presente nell'array
+                ruotaNazionale.push(estratto);//Inserisco l'etratto nell'array
+            }
+        }
+
+        console.log(ruotaNazionale);
+        /*
+        let tentativo = +prompt("Tenta la fortuna e indovina uno dei numeri estratti");
+        if(ruotaNazionale.includes(tentativo)){
+            esito.innerHTML = "Indovinato";
+            esito.style.color = "#f00"; //Rosso
+            esito.style.backgroundColor = "#0f0" //Verde
+        }else{
+            esito.innerHTML = "Sbagliato";
+            esito.style.color = "#0f0"; //verde
+            esito.style.backgroundColor = "#f00" //Rosso
+        }
+        */
+
+        //Chiedere quanti numeri vuole giocare (da 1 a 5)
+        //Cntrollare quanti numeri ha indovinato e stampare a video se ha vinto
+        //I premi sono ambo (2 numeri indovinati), terno (3 numeri indovinati) 
+        //quaterna (4 numeri indovinati) e cinquina (5 numeri indovinati)
+        //->Dire anche quali sono i numeri indovinati
+    </script>
+</body>
+</html>
