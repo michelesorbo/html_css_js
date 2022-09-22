@@ -13,7 +13,7 @@
         <button id="btnSalutami">Secondo BTN</button>
     </p>
     <p>
-        <input type="text" id="nome" placeholder="Inserisci il tuo nome"><button>Fatti salutare</button>
+        <input type="text" id="nome" placeholder="Inserisci il tuo nome"><button id="btn2">Fatti salutare</button>
     </p>
     <script>
 
@@ -62,8 +62,14 @@
             window.alert("la somma è: " + (a+b));
         }
 
-        somma(4,6);
-        somma(2,5);
+
+        function salutoInput(){
+            window.alert("Ciao " + document.getElementById("nome").value);
+        }
+
+        document.getElementById("btn2").addEventListener("click", salutoInput);
+        // somma(4,6);
+        // somma(2,5);
 
     </script>
 </body>
