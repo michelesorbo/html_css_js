@@ -40,6 +40,23 @@
         //I premi sono ambo (2 numeri indovinati), terno (3 numeri indovinati) 
         //quaterna (4 numeri indovinati) e cinquina (5 numeri indovinati)
         //->Dire anche quali sono i numeri indovinati
+
+        //Versione semplice
+        let tentativi = +prompt("Quanti numeri vuoi estrarre? (max 5)");
+
+        //Senza ricordare i numeri
+        let i = 1;
+        let esatti = 0;
+
+        while(i <= tentativi){
+            let numero = +prompt("Dimmi il "+ i +"° numero");
+            if(ruotaNazionale.includes(numero)){
+                esatti++;
+            }
+            i++;
+        }
+
+        esito.innerHTML = "Hai indovinato "+ esatti +" numeri";
     </script>
 </body>
 </html>
