@@ -1,3 +1,7 @@
 .qta{
-    border-color: brown;
+    max-width: 50px;
+    text-align: center;
+    align-items: center;
+    align-content: flex-end;
+    box-sizing: content-box;
 }
