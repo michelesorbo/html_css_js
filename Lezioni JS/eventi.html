@@ -13,6 +13,14 @@
         p{
             background-color: blue;
         }
+        .errore{
+            color: brown;
+            font-size: 8px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            border: 2px solid red;
+            border-radius: 2px;
+            display:none;
+        }
     </style>
 </head>
 <body>
@@ -23,9 +31,17 @@
     <p>Sono il paragrafo della pagina</p>
     <p>Sono il secondo paragrafo</p>
     <form>
-        <input type="text" placeholder="scrivi la tua mail" id="inp1"><br>
-        <input type="text" placeholder="Codice Fiscale" id="inp2"><br>
-        <button id="btn">Sono il pulsante</button>
+        <div>
+            <input type="text" placeholder="scrivi la tua mail" id="inp1">
+            <div id="error_inp1" class="errore"></div>
+        </div>
+        <div>
+            <input type="text" placeholder="Codice Fiscale" id="inp2">
+            <div id="error_inp2" class="errore"></div>
+        </div>
+        <div>
+            <button id="btn">Sono il pulsante</button>
+        </div>
     </form>
     
 
@@ -49,8 +65,8 @@
 
         paragrafo.onclick = saluta;
 
-        inp1.onfocus = function(e){
-            console.log(e.target);
+        inp2.onfocus = function(e){
+            console.log(e.target.value);
         }
 
         /*
@@ -93,13 +109,31 @@
         }
 
         inp1.onchange = function(e){
+            let err = document.querySelector("#error_inp1");
             let val = e.target.value;
             console.log(val);
-            if(!indizzoMail.test(val)){
-                alert('Devi inserire una mail valida');
-                e.target.value = "";
+            if(!indizzoMail.test(val.toLowerCase())){
+                err.innerHTML = "Indirizzo mail non valido";
+                err.style.display = "inline";
+            }else{
+                err.innerHTML = "";
+                err.style.display = "none";
             }
         }
+
+        //3° Metodo per catturare un evento
+        inp2.addEventListener("change", function(e){
+            let err = document.querySelector("#error_inp2");
+            let val = e.target.value;
+            console.log(typeof(val));
+            if(!codiceFiscale.test(val)){
+                err.innerHTML = "Codice Fiscale non valido";
+                err.style.display = "inline";
+            }else{
+                err.innerHTML = "";
+                err.style.display = "none";
+            }
+        });
 
 
 
