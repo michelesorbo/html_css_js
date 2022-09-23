@@ -70,11 +70,17 @@
             }
         }
 
-        let nome = "Ciao@Mondo";
+        let nome = "Ciao@Mondo.it";
         //console.log(nome.slice(4)); //Serve a tagliare la stringa substring
         console.log(nome.indexOf('@')); //Ritorna l'indice della @
-        console.log(nome.slice(nome.indexOf("@")+1));
-        console.log(nome.length);
+        let temp = nome.slice(nome.indexOf("@")+1);
+        if(temp.includes(".")){
+            let temp2 = temp.slice(0, temp.indexOf("."));
+            console.log(temp2 + " " + temp2.length);
+            if(temp.slice(temp.indexOf(".")+ 1).length >= 2){
+                console.log("ok");
+            }
+        }
         //Dopo la @ almeno 2 caratteri 
         //Dopo i due caratteri ci sia un punto
         //Dopo il punto lameno 2 caratteri
