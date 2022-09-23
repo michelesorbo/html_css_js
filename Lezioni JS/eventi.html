@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gli Eventi</title>
+    <style>
+        h1{
+            background-color: brown;
+        }
+
+        p{
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1° Metodo in line -->
+
+    <h1 onmouseover="saluta()">Titolo della pagina</h1>
+    <p>Sono il paragrafo della pagina</p>
+    <p>Sono il secondo paragrafo</p>
+    <form>
+        <input type="text" value="Scrivi qualcosa"><br>
+        <button id="btn">Sono il pulsante</button>
+    </form>
+    
+
+    <script>
+        let titolo = document.querySelector('h1');
+        let paragrafo = document.querySelector('p'); //Solo il primo tag p
+        let paragrafi = document.querySelectorAll('p'); //Tutti i tag p
+        let btn = document.querySelector('#btn'); //Seleziono il tag con id btn
+        //let btn_id = document.getElementById('btn');
+        let inp = document.querySelector('input');
+
+        function saluta(){
+            console.log("Ciao dalla funzione");
+        }
+
+        
+        paragrafo.onmousemove = function(){ //Funzione anonima
+            console.log("Sono la funzione di paragrafo");
+        }
+
+        paragrafo.onclick = saluta;
+
+        inp.onfocus = function(e){
+            console.log(e.target);
+        }
+
+        inp.onchange = function(e){
+            console.log(e.target.value);
+            if(e.target.value == "francesco"){
+                e.target.value = "";
+                window.alert("Persona importante non scrivere il suo nome")
+            }
+        }
+
+
+
+    </script>
+
+</body>
+</html>
