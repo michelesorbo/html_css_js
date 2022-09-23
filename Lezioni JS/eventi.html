@@ -23,7 +23,7 @@
     <p>Sono il paragrafo della pagina</p>
     <p>Sono il secondo paragrafo</p>
     <form>
-        <input type="text" value="Scrivi qualcosa"><br>
+        <input type="text" placeholder="scrivi la tua mail"><br>
         <button id="btn">Sono il pulsante</button>
     </form>
     
@@ -51,6 +51,7 @@
             console.log(e.target);
         }
 
+        /*
         inp.onchange = function(e){
             console.log(e.target.value);
             if(e.target.value == "francesco"){
@@ -58,6 +59,23 @@
                 window.alert("Persona importante non scrivere il suo nome")
             }
         }
+        */
+
+        inp.onchange = function(e){
+            let val = e.target.value;
+            console.log(val);
+            if(!val.includes('@')){
+                alert('Devi inserire una mail valida');
+                e.target.value = "";
+            }
+        }
+
+        let nome = "Ciao@Mondo";
+        //console.log(nome.slice(4)); //Serve a tagliare la stringa substring
+        console.log(nome.indexOf('@')); //Ritorna l'indice della @
+        console.log(nome.slice(nome.indexOf("@")+1));
+        console.log(nome.length);
+        //Dopo la @ almeno 2 caratteri 
 
 
 
