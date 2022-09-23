@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="salutoInput">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esercizio</title>
+</head>
+<body>
+    <p>
+        <input type="text" id="inp1">
+        <input type="text" id="inp2">
+        
+    </p>
+    <p>
+        <button id="btn1">Somma</button>
+        <button id="btn2">Sottrazione</button>
+    
+    </p>
+    <p id="ris"></p>
+    
+    <script>
+
+        function somma(){
+            let n1 = +document.getElementById("inp1").value;
+            let n2 = +document.getElementById("inp2").value;
+
+            if(isNaN(n1 + n2)){
+                document.getElementById("ris").innerHTML = "Inserire solo numeri";
+            }else{
+                document.getElementById("ris").innerHTML = "La somma è: "+( n1 + n2);
+            }
+        }
+
+        function sottrazione(){
+            let n1 = +document.getElementById("inp1").value;
+            let n2 = +document.getElementById("inp2").value;
+
+            if(isNaN(n1 - n2)){
+                document.getElementById("ris").innerHTML = "Inserire solo numeri";
+            }else{
+                document.getElementById("ris").innerHTML = "La differenza è: "+( n1 - n2);
+            }
+        }
+
+        document.getElementById("btn1").addEventListener("click", somma);
+
+        document.getElementById("btn2").addEventListener("click", sottrazione);
+
+
+    </script>
+
+    <h1>Trasformo i secondi in ore minuti e secondi</h1>
+    <p>
+        <input type="number" id="inp3"><button id="btn3">Calcola</button>
+    </p>
+    <p id="ris2"></p>
+    <script>
+        
+        function calcoloOre(){
+            let numeroInSecondi = +document.querySelector("#inp3").value;
+            let ore = Math.floor(numeroInSecondi/3600); //Mi sono calcolato le ore
+            let restoMinuti = numeroInSecondi % 3600;
+            let minuti = Math.floor(restoMinuti / 60); //Vado a calcolare i minuti
+            let secondi = restoMinuti % 60; //Ricavo i secondi
+            document.getElementById("ris2").innerHTML = "Ore: " + ore + " Minuti: " + minuti + " Secondi: " +secondi;
+        }
+
+        document.getElementById("btn3").addEventListener("click", calcoloOre);
+        document.querySelector("#inp3").addEventListener("change", calcoloOre);
+        
+    </script>
+</body>
+</html>

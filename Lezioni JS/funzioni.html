@@ -64,7 +64,12 @@
 
 
         function salutoInput(){
-            window.alert("Ciao " + document.getElementById("nome").value);
+            let nome = document.getElementById("nome").value;
+            if(nome.toLowerCase() == "francesco"){
+                window.alert("Non lo saluto ");
+            }else{
+                window.alert("Ciao "+ nome);
+            }
         }
 
         document.getElementById("btn2").addEventListener("click", salutoInput);
