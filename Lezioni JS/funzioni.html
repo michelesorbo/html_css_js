@@ -55,7 +55,7 @@
         }
 
         let nome_var = "Francesco";
-        salutoNome(nome_var);
+        //salutoNome(nome_var);
 
         //Funzioni con più parammetri
         function somma(a,b){
@@ -75,6 +75,28 @@
         document.getElementById("btn2").addEventListener("click", salutoInput);
         // somma(4,6);
         // somma(2,5);
+
+
+
+        //Funzioni con ritorno
+        function molt(a, b){
+            return a*b;
+        }
+
+        function cubo(n){
+            if(n%2 == 0){
+                console.log("Cudo di un numero pari");
+                return n*n*n;
+            }else{
+                return 1;
+            }
+
+            console.log("Dopo");
+        }
+
+        let moltiplicazione = molt(3,3);
+        console.log(moltiplicazione);
+        console.log(cubo(3));
 
     </script>
 </body>

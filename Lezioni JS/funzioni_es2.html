@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funzioni con return</title>
+    <style>
+        body{
+            background-color: cadetblue;
+        }
+        .statoClass{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+        <input type="text"><br>
+        <input type="text"><br>
+        <input type="radio" id="italia" name="stato" onclick="Nas()"> Italiano - 
+        <input type="radio" id="straniero" name="stato" onclick="Vis()">Straniero</br>
+        <div id="statoId" class="statoClass">
+            Scrivi lo stao di appartenenza <input type="text" id="st_inp">
+        </div>
+
+        <button id="btn" onclick="verifaPresenza()">Verifica tutti i campi</button>
+        <button id="btn_r">Rosso</button><button id="btn_w">Bianco</button>
+
+    <script>
+
+        let inp_all = document.querySelectorAll('input');
+        let body = document.querySelector('body');
+        let btn_r = document.querySelector("#btn_r");
+        let btn_w = document.querySelector("#btn_w");
+        let straniero = document.querySelector("#straniero");
+        let statoid = document.querySelector("#statoId");
+
+        function Vis(){
+            statoid.style.display = "inline";
+        }
+
+        function Nas(){
+            statoid.style.display = "none";
+            document.querySelector("#st_inp").value = "";
+        }
+
+        //Metodo onclick
+
+        btn_r.onclick = function(e){
+            body.style.backgroundColor = "#f00";
+        }
+
+        btn_w.addEventListener("click", function(e){
+            body.style.backgroundColor = "#fff";
+        });
+
+
+        function verifaPresenza(){
+            //Voglio verificare che tutti i icampi input siano pieni
+            let errati = 0;
+            inp_all.forEach((inp) => {
+                if(!(inp.value.length > 2)){
+                    errati++;
+                    inp.style.border = "2px solid #f00";
+                }else{
+                    inp.style.border = "1px solid #000";
+                }
+            });
+
+            if(errati > 0){
+                alert("I campi errati sono: "+errati);
+            }
+        }
+
+
+
+    </script>
+
+</body>
+</html>
