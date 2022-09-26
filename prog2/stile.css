@@ -41,3 +41,131 @@ body{
 html, body{
     height: 100vh;
 }
+
+/* wrapper app */
+
+#wrapper{ /*Creo box model e border */
+    background: var(--color-bg-form-wrapper);
+    width: 80%;
+    overflow: hidden;
+    border: 1px solid var(--color-gray-light);
+    border-radius: 4px;
+    padding: 3rem;
+    transition: all .4s;
+}
+
+#wrapper:hover{
+    box-shadow: 0 0 14px 3px var(--color-shadow-wrapper);
+}
+
+/* Indicatori */
+#indicatori{
+    display: flex; /* Dispongo gli indicatori orizzontalmente */
+    margin-bottom: 2rem;
+}
+
+.n-step{
+    border-bottom: 2px solid var(--color-gray);
+    flex-grow: 1; /*Espandiamo la linea atutto il box */
+    position: relative;
+}
+
+.n-step > span {
+    position: absolute;
+    width: 2rem;
+    height: 2rem;
+    background: var(--color-gray);
+    border-radius: 50%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    top: -1rem;
+    left: calc(50% - 1rem);
+}
+
+/* Impostiamo i tre stili */
+.n-step.valid{
+    border-bottom: 2px solid var(--color-main);
+}
+
+.n-step.n-step.valid > span {
+    background: var(--color-main);
+    box-shadow: 0 0 8px 2px var(--color-box-shadow-main);
+}
+
+.n-step.current{
+    border-bottom: 2px solid var(--color-main);
+}
+
+.n-step.current > span {
+    border: 2px solid var(--color-main);
+    background-color: var(--color-bg-form-wrapper);
+    color: var(--color-main);
+}
+
+/* form wrapper step */
+#form-step-wrapper{
+    width: 100%;
+    display: flex;
+    padding-top: 1rem;
+    padding-bottom: 3rem;
+    gap: 20%;
+    transition: all .6s;
+}
+
+input{
+    background: none;
+    width: 100%;
+    border: none;
+    outline: none;
+    border-bottom: 1px dotted var(--color-gray-light);
+    padding: 0.8rem;
+    color: var(--color-main);
+    font-weight: bold;
+}
+
+input:focus{
+    border-bottom: 1px dotted var(--color-main);
+}
+
+input::placeholder{
+    color: var(--color-gray);
+    font-weight: normal;
+}
+
+.form-step{
+    flex: 1 0 100%;
+}
+
+
+/* Stile Pulsanti */
+#form-btn-wrapper{
+    display: flex;
+}
+
+#btn-next{
+    margin-left: auto;
+    background: var(--color-main);
+    transition: all .4s;
+}
+
+#btn-next:hover{
+    box-shadow: 0 6px 18px 0 var(--color-box-shadow-main);
+}
+
+#btn-prev{
+    background: var(--color-gray);
+    display: none;
+}
+
+button{
+    border: none;
+    padding: 0.6rem 2rem;
+    border-radius: 3rem;
+    color: white;
+    font-size: 0.9rem;
+}
+
+button:hover{
+    cursor: pointer;
+}
