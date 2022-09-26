@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Urbanist&display=swap');
+:root {
+    --color-main: rgba(211, 103, 193,1);
+    --color-success: #47b869;
+    --color-btn-hover: rgba(60,60,60,1);
+    --color-bg: rgb(30,30,30);
+    --color-bg-form-wrapper: rgb(37,37,37);
+    --color-gray: rgb(200, 200, 200);
+    --color-gray-light: rgba(255, 255, 255, 0.25);
+    --color-gray-dark: rgba(255, 255, 255, 0.4);
+    --color-box-shadow-main: rgba(243, 102, 231, 0.2);
+    --color-shadow-wrapper: rgba(211, 103, 193, 0.25);
+    --color-msg-error: coral;
+    --speed-transition: .4s;
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+::selection {
+    background: var(--color-main);
+    color: white;
+}
+html {
+    font-family: 'Urbanist', sans-serif;
+    font-size: 62.5%;
+    color: white;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--color-bg);
+}
+html, body {
+    height: 100vh;
+}
+/* wrapper app */
+#wrapper { /* Creo box border */
+    background: var(--color-bg-form-wrapper);
+    width: 80%;
+    overflow: hidden;
+    border: 1px solid var(--color-gray-light);
+    border-radius: 4px;
+    padding: 3rem;
+    transition: all .4s; /* Tempo di transizione dell'hover */
+} 
+#wrapper:hover { /*Creo il Bagliore al Box */
+    box-shadow: 0 0 14px 3px var(--color-shadow-wrapper);
+}
+
+/* indicatori */
+#indicatori {
+    display: flex; /*Disporre orizzontalmente gli indicatori */
+    margin-bottom: 2rem; /* Separiamo gli indicatori */
+}
+.n-step {
+    border-bottom: 2px solid var(--color-gray);
+    flex-grow: 1; /*Espandiamo la linea atutto il box */
+    position: relative; /* Perchè per gli altri spam usiamo assoluto */
+}
+.n-step > span {
+    position: absolute;
+    width: 2rem;
+    height: 2rem;
+    background: var(--color-gray);
+    border-radius: 50%;
+    display: inline-flex; /* Centriamo i numeri nel cerchio */
+    justify-content: center;
+    align-items: center;
+    top: -1rem; /*  Su */
+    left: calc(50% - 1rem);
+}
+
+/* Impostiamo i tre st<ti */
+.n-step.valid {
+    border-bottom: 2px solid var(--color-main);
+}
+.n-step.valid > span {
+    background: var(--color-main);
+    box-shadow: 0 0 8px 2px var(--color-box-shadow-main);
+}
+.n-step.current {
+    border-bottom: 2px solid var(--color-main);
+}
+.n-step.current > span {
+    border: 2px solid var(--color-main);
+    background-color: var(--color-bg-form-wrapper);
+    color: var(--color-main);
+}
+
+/* form wrapper slider */
+#form-step-wrapper {
+    width: 100%;
+    display: flex;
+    padding-top: 1rem;
+    padding-bottom: 3rem;
+    gap: 20%;
+    transition: all .6s;
+}
+input {
+    width: 100%;
+    border: none;
+    outline: none;
+    background: none;
+    border-bottom: 1px dotted var(--color-gray-light);
+    padding: 0.8rem;
+    color: var(--color-main);
+    font-weight: bold;
+}
+input:focus {
+    border-bottom: 1px dotted var(--color-main);
+}
+input::placeholder {
+    color: var(--color-gray);
+    font-weight: normal;
+}
+.form-step {
+    flex: 1 0 100%;
+}
+
+/* pulsanti */
+#form-btn-wrapper {
+    display: flex;
+}
+#btn-next {
+    margin-left: auto;
+    background: var(--color-main);
+    transition: all .4s;
+}
+#btn-next:hover {
+    box-shadow: 0 6px 18px 0 var(--color-box-shadow-main);
+}
+#btn-prev {
+    background: var(--color-gray);
+    display: none;
+}
+button {
+    border: none;
+    padding: 0.6rem 2rem;
+    border-radius: 3rem;
+    color: white;
+    font-size: 0.9rem;
+}
+button:hover {
+    cursor: pointer;
+}

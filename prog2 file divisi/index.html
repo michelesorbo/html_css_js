@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="it" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Form Multi-step</title>
+    <link rel="stylesheet" href="stile.css">
+    <link rel="shortcut icon" href="#" type="image/x-icon">
+</head>
+<body>
+    <!-- wrapper app -->
+    <section id="wrapper">
+        <section id="indicatori">
+            <div id="indicatore1" class="n-step current"><span>1</span></div>
+            <div id="indicatore2" class="n-step next"><span>2</span></div>
+            <div id="indicatore3" class="n-step next"><span>3</span></div>
+        </section>
+
+        <form action="" name="form-app">
+            <section id="form-step-wrapper">
+                <div id="form-step1" class="form-step">
+                    <input type="text" id="nome" placeholder="Nome *">
+                    <input type="text" id="cognome" placeholder="Cognome *">
+                </div>
+                <div id="form-step2" class="form-step">
+                    <input type="text" id="email" placeholder="Email *">
+                    <input type="text" id="telefono" placeholder="Telefono">
+                </div>
+                <div id="form-step3" class="form-step">
+                    <input type="text" id="citta" placeholder="Città">
+                    <input type="text" id="cap" placeholder="CAP">
+                </div>
+            </section>
+
+            <p id="error-message"></p>
+
+            <section id="form-btn-wrapper">
+                <button id="btn-prev" class="prev">Prev</button>
+                <button id="btn-next" class="next">Next</button>
+            </section>
+        </form>
+    </section>
+
+    <script type="module">
+        import App from './form/app.js'
+        document.addEventListener('DOMContentLoaded', e => App())
+    </script>
+</body>
+</html>

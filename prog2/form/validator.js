@@ -1,4 +1,4 @@
-const checkForm = conf => {
+const checkForm2 = conf => {
     console.log("Sono validator")
 }
 
@@ -35,4 +35,4 @@ function resetErrorMessage(conf){
     conf.errorMessage.textContent = ''
 } */
 
-export default checkForm
+export default checkForm2
