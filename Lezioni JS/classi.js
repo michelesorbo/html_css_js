@@ -3,7 +3,7 @@ class Persona{
     constructor(nome, cognome){
         this.nome = nome;
         this.cognome = cognome;
-        this._email = "";
+        this._email = ""; 
         this.inidrizzo = "";
     }
 
@@ -42,6 +42,17 @@ class Programmatore extends Persona {
     saluta(){ //override del metodo saluta
         console.log("Il programmatore è: " +this.nome)
     }
+
+}
+
+class Docente extends Persona{
+    constructor(nome, cognome){
+        super(nome, cognome);
+        this.materia = "";
+    }
+}
+
+class ProJunior extends Programmatore{
 
 }
 
