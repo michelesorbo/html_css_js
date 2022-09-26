@@ -34,3 +34,5 @@ function showErrorMessage(conf, msg){
 function resetErrorMessage(conf){
     conf.errorMessage.textContent = ''
 } */
+
+export default checkForm

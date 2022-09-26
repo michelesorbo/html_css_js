@@ -73,19 +73,38 @@ function checkStep1(conf){
 
 }
 
-function checkStep2(conf){
+function checkStep2(conf){ //Completare controllo telefono
     resetErrorMessage(conf)
+    let ver_telefono
     const email = conf.formApp.elements['email'].value
-    if(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/.test(email)){
-        return conf.stepValid = true
+    const telefono = conf.formApp.elements['telefono'].value
+    
+    if(telefono[0] == "+"){
+        ver_telefono = telefono.slice(1)
+    }else{
+        ver_telefono = telefono
     }
-    showErrorMessage(conf, "Email non valida")
+    
+    if(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/.test(email)){
+        if(!isNaN(ver_telefono)){ //  /^\+?\d[0-9 .]{7,12}\d$/
+            return conf.stepValid = true
+        }else{
+            showErrorMessage(conf, "Telefono non valido")
+        }
+    }else{
+        showErrorMessage(conf, "Email non valido")
+    }
 }
 
-function checkStep3(conf){
+function checkStep3(conf){ 
     resetErrorMessage(conf)
-    alert("I moduli sono stati compilati correttamente")
-    conf.formApp.submit()
+    const cap = conf.formApp.elements['cap'].value
+    if(cap.length === 5 && !isNaN(cap)){ //Opzione con REG EXP /^[0-9]{5}$/
+        alert("I moduli sono stati compilati correttamente")
+        conf.formApp.submit()
+    }else{
+        showErrorMessage(conf, "CAP non valido!")
+    }
 }
 
 function showErrorMessage(conf, msg){
