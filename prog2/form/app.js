@@ -1,11 +1,3 @@
-//Entry point
-//import checkForm from './validator'
-
-/* Metodo classico
-let p_error = document.getElementById('error-message');
-p_error.innerHTML = "Errore vecchio metodo";
-*/
-
 //Metodo ad oggetti
 const conf = {
     btnNext: document.getElementById('btn-next'),
@@ -44,8 +36,8 @@ const stepEvent = e =>{
     }
     
     //console.log(conf.currentStep);
-    setIndicator(conf)
-    setStepForm(conf)
+   setIndicator(conf)
+   setStepForm(conf)
 }
 
 
@@ -56,8 +48,7 @@ export default () => {
     conf.btnPrev.addEventListener('click', stepEvent)
 }
 
-
-//Da scrivere in validator.js
+/*Da scrivere in validator.js */
 const checkForm = conf => {
     console.log(conf.currentStep)
     switch(conf.currentStep){
@@ -82,10 +73,44 @@ function checkStep1(conf){
 
 }
 
+function checkStep2(conf){
+    resetErrorMessage(conf)
+    const email = conf.formApp.elements['email'].value
+    if(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/.test(email)){
+        return conf.stepValid = true
+    }
+    showErrorMessage(conf, "Email non valida")
+}
+
+function checkStep3(conf){
+    resetErrorMessage(conf)
+    alert("I moduli sono stati compilati correttamente")
+    conf.formApp.submit()
+}
+
 function showErrorMessage(conf, msg){
     conf.errorMessage.textContent = msg
 }
 
 function resetErrorMessage(conf){
     conf.errorMessage.textContent = ''
+} 
+
+
+//DA INSERIRE NEL FILE INDICATORI.JS
+const setStepForm = conf => {
+    const stepMargin = (conf.currentStep - 1) * (100 + conf.GAP)
+    conf.formStepWrapper.style.marginLeft = `-${stepMargin}%`
+}
+
+
+const setIndicator = conf =>{
+    conf.indicatoriStep.forEach((item, i) => {
+        item.className = 'n-step ' + (i < conf.currentStep - 1 ? 'valid' : 'next')
+        item.className = (i === conf.currentStep - 1) ? 'n-step current' : item.className
+    });
+
+    //Setto la visibilità del pulsante prev
+    conf.btnPrev.style.display = conf.currentStep > 1 ? 'inline' : 'none'
+    conf.btnNext.textContent = conf.currentStep === conf.STEP_NUM ? 'Completa' : 'Next'
 }
