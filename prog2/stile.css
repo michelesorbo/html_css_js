@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Urbanist&display=swap');
+:root {
+    --color-main: rgba(211, 103, 193,1);
+    --color-success: #47b869;
+    --color-btn-hover: rgba(60,60,60,1);
+    --color-bg: rgb(30,30,30);
+    --color-bg-form-wrapper: rgb(37,37,37);
+    --color-gray: rgb(200, 200, 200);
+    --color-gray-light: rgba(255, 255, 255, 0.25);
+    --color-gray-dark: rgba(255, 255, 255, 0.4);
+    --color-box-shadow-main: rgba(243, 102, 231, 0.2);
+    --color-shadow-wrapper: rgba(211, 103, 193, 0.25);
+    --color-msg-error: coral;
+    --speed-transition: .4s;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+::selection{
+    background: var(--color-main);
+    color: white;
+}
+
+html{
+    font-family: "Urbanist", sans-serif;
+    font-size: 62.5%;
+    color: white;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--color-bg);
+}
+
+html, body{
+    height: 100vh;
+}

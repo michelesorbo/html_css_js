@@ -2,7 +2,7 @@ let qta = document.querySelectorAll(".qta");
 let prezzi = document.querySelectorAll("#prezzo");
 
 console.log(qta);
-console.log(prezzi[1]);
+console.log(prezzi);
 
 qta.forEach((el, index) => {
     //console.log(el.value);
