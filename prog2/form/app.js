@@ -22,11 +22,27 @@ const conf = {
 //conf.errorMessage.innerHTML = "Errore con oggetto conf";
 
 const stepValidatorEvent = e => {
+    e.stopPropagation()
+    e.preventDefault()
 
+    //Controllo validità dati
 }
 
-const stepEvent = e => {
-    
+const stepEvent = e =>{
+    e.stopPropagation()
+    e.preventDefault()
+
+    //Gestire gli step
+    if(e.target.id === 'btn-next'){
+        if(conf.currentStep === conf.STEP_NUM) return
+        conf.currentStep++
+        //conf.stepValid = false
+    }else{
+        conf.currentStep--
+    }
+
+    console.log(conf.currentStep);
+
 }
 
 
