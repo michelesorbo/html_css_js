@@ -20,17 +20,25 @@
 
         <div class="mb-3">
             <label for="exampleInputPassword1" class="form-label">Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword1" name="pwd">
+            <input type="password" class="form-control" id="exampleInputPassword1" name="pwd" required>
         </div>
 
         <div class="mb-3">
             <label for="exampleInputName" class="form-label">Nome</label>
-            <input type="text" class="form-control" id="exampleInputName" name="nome">
+            <input type="text" class="form-control" id="exampleInputName" name="nome" required>
         </div>
 
         <div class="mb-3">
             <label for="exampleInputCognome" class="form-label">Cognome</label>
-            <input type="text" class="form-control" id="exampleInputCognome" name="cognome">
+            <input type="text" class="form-control" id="exampleInputCognome" name="cognome" required>
+        </div>
+
+        <div class="mb-3">
+            <?php
+                if(isset($_GET['msg'])){
+                    echo "Utente già presente";
+                }
+            ?>
         </div>
         
         <button type="submit" class="btn btn-primary">Registrami</button>
