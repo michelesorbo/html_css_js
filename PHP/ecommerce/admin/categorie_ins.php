@@ -29,7 +29,7 @@ include("../dbcon.php");
         </div>
       </div>
 
-      <h2>Section title</h2>
+      <h2>Inserisci nuova categoria</h2>
       <form method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">
         <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">Nome Categoria</label>
@@ -40,7 +40,7 @@ include("../dbcon.php");
             <textarea class="form-control" name="desc" id="exampleFormControlTextarea1" rows="3"></textarea>
         </div>
         <div class="mb-3">
-            <input type="submit" value="Inserisci">
+            <input type="submit" value="Inserisci" class="btn btn-primary">
         </div>
     </form>
     <?php
@@ -57,10 +57,29 @@ include("../dbcon.php");
     }
     ?>
 
-    <div>Vedo la tabella delle categoria presenti
+    <h3>Elenco categorie</h3>
     <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>ID Categoria</th>
+                <th>Nome</th>
+                <th>Descrizione</th>
+            </tr>
+        </thead>
+        <tbody>
+        <?php
+            $result_table = $db_con->query("SELECT * FROM categorie");
+
+            while($row = $result_table->fetch_assoc()){
+                echo "<tr>";
+                echo "<td>".$row["id"]."</td>";
+                echo "<td>".$row["nome"]."</td>";
+                echo "<td>".$row["descrizione"]."</td>";
+                echo "</tr>";
+            }
+        ?>
+        </tbody>
     </table>
-    </div>
     </main>
   </div>
 </div>
