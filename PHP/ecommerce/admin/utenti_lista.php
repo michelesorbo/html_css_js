@@ -3,6 +3,7 @@ session_start();
 if($_SESSION['logged'] == false){
   header('Location: ../login.php');
 }
+include("../dbcon.php");
 ?>
 <?php include("layout/head.php"); ?>
 <body>

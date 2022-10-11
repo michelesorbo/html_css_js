@@ -13,6 +13,12 @@
               Utenti
             </a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="categorie_ins.php">
+              <span data-feather="home" class="align-text-bottom"></span>
+              Categorie Inserimento
+            </a>
+          </li>
          <!-- <li class="nav-item">
             <a class="nav-link" href="#">
               <span data-feather="file" class="align-text-bottom"></span>
